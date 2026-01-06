@@ -10,11 +10,9 @@ public class Controller : MonoBehaviour
 {
     Rigidbody m_Rigidbody;
 
-    public float m_Speed = 5.0f, m_rotateSpeed = 50.0f;
+    public float m_Speed = 0.1f, m_rotateSpeed = 50.0f;
 
     void Start()
-
-
     {
         m_Rigidbody = GetComponent<Rigidbody>();
     }
@@ -30,18 +28,15 @@ public class Controller : MonoBehaviour
         if (Input.GetKey(KeyCode.UpArrow))
         {
             //Move the Rigidbody forwards constantly at speed you define (the blue arrow axis in Scene view)
-            m_Rigidbody.linearVelocity = transform.forward * m_Speed;
+            //m_Rigidbody.linearVelocity = transform.forward * m_Speed;
+            transform.position += transform.forward * m_Speed;
         }
-        else
-        {
-            m_Rigidbody.linearVelocity = transform.forward * 0.0f;
-        }
-
 
         if (Input.GetKey(KeyCode.DownArrow))
         {
             //Move the Rigidbody backwards constantly at the speed you define (the blue arrow axis in Scene view)
-            m_Rigidbody.linearVelocity = -transform.forward * m_Speed;
+            //m_Rigidbody.linearVelocity = -transform.forward * m_Speed;
+            transform.position -= transform.forward * m_Speed * 0.5f;
         }
 
         if (Input.GetKey(KeyCode.RightArrow))
