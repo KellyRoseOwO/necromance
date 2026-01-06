@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PopupController : MonoBehaviour
 {
-    public GameObject popupPanel; // assign your panel here in Inspector
+    public GameObject popupPanel; 
 
     public void OpenPopup()
     {

@@ -2,13 +2,17 @@ using UnityEngine;
 
 public class PickupItem : MonoBehaviour
 {
-    public string itemName = "Default Item"; 
+    public string itemName = "Default Item";
+    public Texture itemIcon;
     private bool playerNearby = false;
     private AudioSource audioSource;
+
+    private PickupPopupUI popupUI;
 
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        popupUI = FindObjectOfType<PickupPopupUI>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -27,11 +31,21 @@ public class PickupItem : MonoBehaviour
     {
         if (playerNearby && Input.GetKeyDown(KeyCode.Return))
         {
-            // add to inventory
-            Inventory playerInventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
+            Inventory playerInventory =
+                GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
+
             if (playerInventory != null)
             {
-                playerInventory.AddItem(itemName);
+                playerInventory.AddItem(itemName, itemIcon);
+
+        
+            }
+
+            if (popupUI != null)
+            {
+                popupUI.ShowPopup(itemName, itemIcon);
+
+           
             }
 
             if (audioSource != null)

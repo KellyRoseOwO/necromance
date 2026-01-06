@@ -3,11 +3,12 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-    public List<string> items = new List<string>();
+    public List<Item> items = new List<Item>();
 
-    public void AddItem(string itemName)
+    public void AddItem(string itemName, Texture itemIcon)
     {
-        items.Add(itemName);
+        Item newItem = new Item(itemName, itemIcon);
+        items.Add(newItem);
         Debug.Log(itemName + " added to inventory. Total items: " + items.Count);
     }
 }
