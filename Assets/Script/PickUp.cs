@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PickupItem : MonoBehaviour
 {
-    public string itemName = "Default Item"; // name stored in inventory
+    public string itemName = "Default Item"; 
     private bool playerNearby = false;
     private AudioSource audioSource;
 
@@ -25,7 +25,7 @@ public class PickupItem : MonoBehaviour
 
     private void Update()
     {
-        if (playerNearby && Input.GetKeyDown(KeyCode.E))
+        if (playerNearby && Input.GetKeyDown(KeyCode.Return))
         {
             // add to inventory
             Inventory playerInventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
@@ -34,7 +34,6 @@ public class PickupItem : MonoBehaviour
                 playerInventory.AddItem(itemName);
             }
 
-            // Play pickup sound
             if (audioSource != null)
                 audioSource.Play();
 
