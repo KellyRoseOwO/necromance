@@ -321,7 +321,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &80827019
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1244,7 +1244,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 268524399}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -1303,7 +1303,7 @@ Transform:
   m_GameObject: {fileID: 268524399}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.34, y: 1.09, z: -15.71}
+  m_LocalPosition: {x: 2.34, y: 0.82, z: -15.71}
   m_LocalScale: {x: 0.58, y: 0.8989999, z: 0.58}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -6570,7 +6570,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 036eea9b7c5f543f480c32abc9e7410e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.54
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 036eea9b7c5f543f480c32abc9e7410e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6737,8 +6737,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 568.65, y: -373.81}
-  m_SizeDelta: {x: -1010.5, y: -882.38}
+  m_AnchoredPosition: {x: 580.5, y: -293.8}
+  m_SizeDelta: {x: -1034.2, y: -976.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1583202485
 MonoBehaviour:
@@ -8027,8 +8027,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -2.8000488, y: 2.255005}
-  m_SizeDelta: {x: 7.5999775, y: 8.290012}
+  m_AnchoredPosition: {x: -1.2800903, y: 0.4750061}
+  m_SizeDelta: {x: 4.5598063, y: 3.4500008}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1804474790
 MonoBehaviour:

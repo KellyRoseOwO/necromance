@@ -929,7 +929,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &440735398
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2541,6 +2541,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameStateManager
   hadIntro: 0
+  inventory: 000000000000000000000000000000000000000000000000
+  isActive: 01000000000000000000000000000000
+  MI: 0
+  IH: 0
+  H: 0
 --- !u!4 &1558545137
 Transform:
   m_ObjectHideFlags: 0
@@ -2593,10 +2598,10 @@ RectTransform:
   - {fileID: 1408293022}
   m_Father: {fileID: 440735398}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 596.1, y: 184.6}
-  m_SizeDelta: {x: 69.4, y: 48.8}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -47.23999, y: -37.3}
+  m_SizeDelta: {x: 69.400024, y: 48.799988}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1773682504
 MonoBehaviour:
