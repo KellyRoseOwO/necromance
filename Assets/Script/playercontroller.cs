@@ -39,14 +39,12 @@ public class Controller : MonoBehaviour
         if (Input.GetKey(KeyCode.RightArrow))
         {
             transform.Rotate(Vector3.up * Time.deltaTime * m_RotateSpeed, Space.World);
-            isMoving = true;
         }
 
         // Rotate left
         if (Input.GetKey(KeyCode.LeftArrow))
         {
             transform.Rotate(Vector3.down * Time.deltaTime * m_RotateSpeed, Space.World);
-            isMoving = true;
         }
 
         // Update Animator parameter
