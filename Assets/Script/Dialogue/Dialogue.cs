@@ -84,6 +84,7 @@ public class Dialogue : MonoBehaviour
 
     void startDialogue()
     {
+        isInDialogue = true;
         index = 0;
         StartCoroutine(TypeLine());
     }
@@ -116,7 +117,7 @@ public class Dialogue : MonoBehaviour
     }
 
 
-    void dialogueSwitch() {      
+    void dialogueSwitch() {  
             switch (choiceValue) {
                 case 0: // close ui (Intro1_2, Romeo1_1, Marjorie1_2, Marjorie2_1, Isa1_2, Isa2_1, Hatarim1_2)
                     textComponent.text = string.Empty;
@@ -301,9 +302,10 @@ public class Dialogue : MonoBehaviour
                 break;
         }
 
-        isInDialogue = true;
-
         gameObject.SetActive(true);
+        lines = dialogue.dialogue;
+        textComponent.text = string.Empty;
+        chatterName.text = string.Empty;
         startDialogue();
     }
 }

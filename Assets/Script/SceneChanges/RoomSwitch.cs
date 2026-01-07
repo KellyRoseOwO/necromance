@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class DoorSceneLoader : MonoBehaviour
 {
+
     [SerializeField] string sceneToLoad;
 
     private void OnTriggerEnter(Collider other)
