@@ -1,59 +1,58 @@
 using UnityEngine;
 
-
-
-
-
 public class Controller : MonoBehaviour
-
-
 {
-    Rigidbody m_Rigidbody;
+    // Rigidbody for physics (optional if you want physics-based movement)
+    private Rigidbody m_Rigidbody;
 
-    public float m_Speed = 0.1f, m_rotateSpeed = 50.0f;
-        public Animator animator; 
+    // Movement speed and rotation speed
+    public float m_Speed = 0.1f;
+    public float m_RotateSpeed = 50.0f;
 
+    // Reference to the Animator component on your GLB model
+    public Animator animator;
 
     void Start()
     {
         m_Rigidbody = GetComponent<Rigidbody>();
     }
 
-
-
-
-
     void Update()
-
-
     {
-        
+        bool isMoving = false;
 
+        // Move forward
         if (Input.GetKey(KeyCode.UpArrow))
         {
-            //Move the Rigidbody forwards constantly at speed you define (the blue arrow axis in Scene view)
-            //m_Rigidbody.linearVelocity = transform.forward * m_Speed;
             transform.position += transform.forward * m_Speed;
+            isMoving = true;
         }
 
+        // Move backward
         if (Input.GetKey(KeyCode.DownArrow))
         {
-            //Move the Rigidbody backwards constantly at the speed you define (the blue arrow axis in Scene view)
-            //m_Rigidbody.linearVelocity = -transform.forward * m_Speed;
             transform.position -= transform.forward * m_Speed * 0.5f;
+            isMoving = true;
         }
 
+        // Rotate right
         if (Input.GetKey(KeyCode.RightArrow))
         {
-            //Rotate the sprite about the Y axis in the positive direction
-            transform.Rotate(new Vector3(0, 1, 0) * Time.deltaTime * m_rotateSpeed, Space.World);
+            transform.Rotate(Vector3.up * Time.deltaTime * m_RotateSpeed, Space.World);
+            isMoving = true;
         }
 
-
+        // Rotate left
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            //Rotate the sprite about the Y axis in the negative direction
-            transform.Rotate(new Vector3(0, -1, 0) * Time.deltaTime * m_rotateSpeed, Space.World);
+            transform.Rotate(Vector3.down * Time.deltaTime * m_RotateSpeed, Space.World);
+            isMoving = true;
+        }
+
+        // Update Animator parameter
+        if (animator != null)
+        {
+            animator.SetBool("IsWalking", isMoving);
         }
     }
 }
