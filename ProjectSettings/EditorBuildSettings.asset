@@ -8,6 +8,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/StartMenu.unity
     guid: 710c64dc1c20e4d96871cb8941e57683
+  - enabled: 1
+    path: Assets/Scenes/GamePlay.unity
+    guid: ccf9f2186b5f12ff499f5e4891a23b8f
+  - enabled: 1
+    path: Assets/Scenes/FinalRoom.unity
+    guid: 5f53d915a2ba24d42887abbe347ffe48
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: c2b07188c05d9423aa0ff7636e71a49c
   m_configObjects:
+    com.unity.dt.app-ui: {fileID: 11400000, guid: 1b1c20d82303e4b5781c3ef50ac1449f, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 289c1b55c9541489481df5cc06664110, type: 3}
   m_UseUCBPForAssetBundles: 0

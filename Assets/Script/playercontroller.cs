@@ -12,6 +12,8 @@ public class Controller : MonoBehaviour
     // Reference to the Animator component on your GLB model
     public Animator animator;
 
+    public Dialogue dialogue;
+
     void Start()
     {
         m_Rigidbody = GetComponent<Rigidbody>();
@@ -19,30 +21,34 @@ public class Controller : MonoBehaviour
 
     void Update()
     {
+        //Debug.Log(dialogue.isPlayerInDialogue());
+
+
+        bool isInDialogue = dialogue.isPlayerInDialogue();
         bool isMoving = false;
 
         // Move forward
-        if (Input.GetKey(KeyCode.UpArrow))
+        if (Input.GetKey(KeyCode.W) && !isInDialogue)
         {
             transform.position += transform.forward * m_Speed;
             isMoving = true;
         }
 
         // Move backward
-        if (Input.GetKey(KeyCode.DownArrow))
+        if (Input.GetKey(KeyCode.S) && !isInDialogue)
         {
             transform.position -= transform.forward * m_Speed * 0.5f;
             isMoving = true;
         }
 
         // Rotate right
-        if (Input.GetKey(KeyCode.RightArrow))
+        if (Input.GetKey(KeyCode.D) && !isInDialogue)
         {
             transform.Rotate(Vector3.up * Time.deltaTime * m_RotateSpeed, Space.World);
         }
 
         // Rotate left
-        if (Input.GetKey(KeyCode.LeftArrow))
+        if (Input.GetKey(KeyCode.A) && !isInDialogue)
         {
             transform.Rotate(Vector3.down * Time.deltaTime * m_RotateSpeed, Space.World);
         }

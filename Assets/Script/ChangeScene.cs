@@ -1,3 +1,5 @@
+// za permanentne spremembe scene
+
 using UnityEngine;
 using UnityEngine.SceneManagement;
 

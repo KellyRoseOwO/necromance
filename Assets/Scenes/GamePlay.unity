@@ -1316,6 +1316,7 @@ MonoBehaviour:
   m_Speed: 0.06
   m_RotateSpeed: 112.9
   animator: {fileID: 1189766731}
+  dialogue: {fileID: 1838140377}
 --- !u!1001 &276641520
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6948,7 +6949,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 751be18b9fa9b4fa0869fb2066e8eff5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DOFActivateOnClick
-  volume: {fileID: 0}
+  volume: {fileID: 1166023565}
   targetFocalLength: 60
 --- !u!82 &1712564700
 AudioSource:
@@ -7416,7 +7417,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1797560938
 MonoBehaviour:
   m_ObjectHideFlags: 0

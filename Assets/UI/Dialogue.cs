@@ -30,6 +30,8 @@ public class Dialogue : MonoBehaviour
     // lines[index, 0] --> name
     // lines[index, 1] --> dialogue
 
+    bool isInDialogue = false;
+
     public float textSpeed;
 
     private int index;
@@ -47,6 +49,8 @@ public class Dialogue : MonoBehaviour
         button2.gameObject.SetActive(false);
         button3.gameObject.SetActive(false);
 
+        gameObject.SetActive(false);
+
         b1text = button1.GetComponentInChildren<TextMeshProUGUI>();
         b2text = button2.GetComponentInChildren<TextMeshProUGUI>();
         b3text = button3.GetComponentInChildren<TextMeshProUGUI>();
@@ -54,13 +58,13 @@ public class Dialogue : MonoBehaviour
         // -------------------------------------
         // Temporary
 
-        dialogue = new Intro1_1();
+        //dialogue = new Intro1_1();
             
-        lines = dialogue.dialogue;
+        //lines = dialogue.dialogue;
 
         // -------------------------------------
         
-        startDialogue();
+        //startDialogue();
     }
 
     // Update is called once per frame
@@ -118,6 +122,7 @@ public class Dialogue : MonoBehaviour
                     textComponent.text = string.Empty;
                     chatterName.text = string.Empty;
                     gameObject.SetActive(false);
+                    isInDialogue = false;
                     break;
                 case 1: // end of Intro1_1
                     button1.gameObject.SetActive(true);
@@ -258,6 +263,47 @@ public class Dialogue : MonoBehaviour
         lines = dialogue.dialogue;
         textComponent.text = string.Empty;
         chatterName.text = string.Empty;
+        startDialogue();
+    }
+
+    public bool isPlayerInDialogue() {
+        return isInDialogue;
+    }
+
+    public void startDialogue(int ID) {
+        switch (ID) {
+            case 0:
+                dialogue = new Intro1_1();
+                break;
+            case 1:
+                dialogue = new Marjorie1_1();
+                break;
+            case 2:
+                dialogue = new Isa1_1();
+                break;
+            case 3:
+                dialogue = new Romeo1_1();
+                break;
+            case 4:
+                dialogue = new Hatarim1_1();
+                break;
+            case 5:
+                dialogue = new Marjorie2_1();
+                break;
+            case 6:
+                dialogue = new Isa2_1();
+                break;
+            case 7:
+                dialogue = new Finale1_1();
+                break;
+            case 8:
+                dialogue = new Finale2_1();
+                break;
+        }
+
+        isInDialogue = true;
+
+        gameObject.SetActive(true);
         startDialogue();
     }
 }
