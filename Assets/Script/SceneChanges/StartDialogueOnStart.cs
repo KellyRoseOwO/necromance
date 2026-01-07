@@ -17,6 +17,14 @@ public class StartDialogueOnStart : MonoBehaviour
             exitButton.gameObject.SetActive(false);
             intro = true;
             gameState.hadIntro = true;
+        } else {
+            if (gameState.inventory[4] == 1) {
+                exitButton.gameObject.SetActive(false);
+                dialogue.startDialogue(8);
+            } else if (gameState.inventory[5] == 1) {
+                exitButton.gameObject.SetActive(false);
+                dialogue.startDialogue(7);
+            }
         }
         
     }

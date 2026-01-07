@@ -4,8 +4,11 @@ public class PickupItem : MonoBehaviour
 {
     public string itemName = "Default Item";
     public Texture itemIcon;
+    public int itemId = -1;
     private bool playerNearby = false;
     private AudioSource audioSource;
+
+    private GameStateManager gameState = GameStateManager.gameState;
 
     private PickupPopupUI popupUI;
 
@@ -13,6 +16,7 @@ public class PickupItem : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
         popupUI = FindObjectOfType<PickupPopupUI>();
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -29,6 +33,7 @@ public class PickupItem : MonoBehaviour
 
     private void Update()
     {
+
         if (playerNearby && Input.GetKeyDown(KeyCode.Return))
         {
             Inventory playerInventory =
@@ -36,15 +41,14 @@ public class PickupItem : MonoBehaviour
 
             if (playerInventory != null)
             {
-                playerInventory.AddItem(itemName, itemIcon);
-
+                playerInventory.AddItem(itemName, itemIcon, itemId);
+                Debug.Log("R");
         
             }
 
             if (popupUI != null)
             {
                 popupUI.ShowPopup(itemName, itemIcon);
-
            
             }
 
@@ -52,6 +56,10 @@ public class PickupItem : MonoBehaviour
                 audioSource.Play();
 
             Destroy(gameObject, audioSource != null ? audioSource.clip.length : 0f);
+        }
+
+        if(gameState.inventory[itemId] != 0) {
+            Destroy(gameObject);
         }
     }
 }

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Dialogue : MonoBehaviour
 {
@@ -20,8 +21,6 @@ public class Dialogue : MonoBehaviour
     private TextMeshProUGUI b3text;
 
     // Event Button Variables
-    private bool talkedWithMAboutI = false;
-    private bool talkedWithIAboutH = false;
     private bool isInChoice = false;
     private int choiceValue = -1;
 
@@ -37,6 +36,8 @@ public class Dialogue : MonoBehaviour
     private int index;
 
     private DialogueMaster dialogue;
+
+    private GameStateManager gameState = GameStateManager.gameState;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -70,7 +71,7 @@ public class Dialogue : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0)) {
+        if (Input.GetKeyDown(KeyCode.Return)) {
             if (isInChoice) {
             } else if (textComponent.text == lines[index, 1]) {
                 NextLine();
@@ -148,7 +149,7 @@ public class Dialogue : MonoBehaviour
                 case 4: // Isa1_1
                     button1.gameObject.SetActive(true);
                     b1text.text = "Nothing, beside the fact that she doesn't like you very much.";
-                    if (talkedWithMAboutI) {
+                    if (gameState.MI) {
                         button2.gameObject.SetActive(true);
                         b2text.text = "About what happened to her hand.";
                     }
@@ -166,7 +167,7 @@ public class Dialogue : MonoBehaviour
                     b1text.text = "What may I call you?";
                     button2.gameObject.SetActive(true);
                     b2text.text = "What else did The Root whisper to you?";
-                    if (talkedWithIAboutH) {
+                    if (gameState.IH) {
                         b3text.text = "Do you know Isa by chance?";
                         button3.gameObject.SetActive(true);
                     }
@@ -183,11 +184,13 @@ public class Dialogue : MonoBehaviour
                     textComponent.text = string.Empty;
                     chatterName.text = string.Empty;
                     gameObject.SetActive(false);
+                    SceneManager.LoadScene("GameOver");
                     break;
                 case 9: // Finale2_1
                     textComponent.text = string.Empty;
                     chatterName.text = string.Empty;
                     gameObject.SetActive(false);
+                    SceneManager.LoadScene("GameOver");
                     break;
                 default:
                     break;
@@ -207,7 +210,7 @@ public class Dialogue : MonoBehaviour
                 break;
             case 2: // Marjorie1_1 choice 1
                 dialogue = new Marjorie1_1_1();
-                talkedWithMAboutI = true;
+                gameState.MI = true;
                 break;
             case 4: // Isa1_1 choice 2
                 dialogue = new Isa1_1_2();
@@ -236,7 +239,7 @@ public class Dialogue : MonoBehaviour
                 break;
             case 4: // Isa1_1 choice 1
                 dialogue = new Isa1_1_1();
-                talkedWithIAboutH = true;
+                gameState.IH = true;
                 break;
             case 6: // Hatarim1_1 choice 2
                 dialogue = new Hatarim1_1_2();
