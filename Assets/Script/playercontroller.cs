@@ -11,6 +11,8 @@ public class Controller : MonoBehaviour
     Rigidbody m_Rigidbody;
 
     public float m_Speed = 0.1f, m_rotateSpeed = 50.0f;
+        public Animator animator; 
+
 
     void Start()
     {
@@ -25,6 +27,8 @@ public class Controller : MonoBehaviour
 
 
     {
+        
+
         if (Input.GetKey(KeyCode.UpArrow))
         {
             //Move the Rigidbody forwards constantly at speed you define (the blue arrow axis in Scene view)
