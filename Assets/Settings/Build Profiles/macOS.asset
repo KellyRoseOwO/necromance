@@ -17,15 +17,17 @@ MonoBehaviour:
   m_Subtarget: 2
   m_PlatformId: 0d2129357eac403d8b359c2dcbf82502
   m_PlatformBuildProfile:
-    rid: 441881739470045249
+    rid: 441881827067035763
   m_OverrideGlobalSceneList: 1
   m_Scenes:
   - m_enabled: 1
     m_path: Assets/Scenes/StartMenu.unity
   - m_enabled: 1
+    m_path: Assets/Scenes/FinalRoom.unity
+  - m_enabled: 1
     m_path: Assets/Scenes/GamePlay.unity
   - m_enabled: 1
-    m_path: Assets/Scenes/FinalRoom.unity
+    m_path: Assets/Scenes/GameOver.unity
   m_HasScriptingDefines: 0
   m_ScriptingDefines: []
   m_PlayerSettingsYaml:
@@ -33,7 +35,7 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 441881739470045249
+    - rid: 441881827067035763
       type: {class: OSXStandaloneBuildProfile, ns: UnityEditor.OSXStandalone, asm: UnityEditor.OSXStandalone.Extensions}
       data:
         m_Development: 0

@@ -3,8 +3,8 @@ using UnityEngine;
 [System.Serializable]
 public class FlickerLight : MonoBehaviour
 {
-    public Light lightSource;       // The light to flicker
-    public bool blinking = true;    // Only flicker if blinking
+    public Light lightSource;      
+    public bool blinking = true;    
     public Color baseColor = Color.white;
 
     private class FlickerState
@@ -54,6 +54,5 @@ public class FlickerLight : MonoBehaviour
 
         // Apply intensity to light
         lightSource.intensity = _flicker.intensity;
-        lightSource.color = baseColor * _flicker.intensity;
     }
 }
