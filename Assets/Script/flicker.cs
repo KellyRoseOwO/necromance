@@ -54,6 +54,5 @@ public class FlickerLight : MonoBehaviour
 
         // Apply intensity to light
         lightSource.intensity = _flicker.intensity;
-        lightSource.color = baseColor * _flicker.intensity;
     }
 }
