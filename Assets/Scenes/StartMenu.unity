@@ -2761,7 +2761,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e1727406be5a4811bfd56ddc23aa6e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PopupController
-  popupPanel: {fileID: 0}
+  popupPanel: {fileID: 440735397}
 --- !u!114 &1773682505
 MonoBehaviour:
   m_ObjectHideFlags: 0
