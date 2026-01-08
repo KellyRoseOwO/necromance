@@ -14,7 +14,7 @@ public class PickupPopupUI : MonoBehaviour
         popupText.text = "Picked up " + itemName;
 
         if (popupImage != null)
-            popupImage.texture = itemTexture; // <--- assign the item texture here
+            popupImage.texture = itemTexture; 
 
         popupPanel.SetActive(true);
 

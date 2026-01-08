@@ -42,7 +42,6 @@ public class PickupItem : MonoBehaviour
             if (playerInventory != null)
             {
                 playerInventory.AddItem(itemName, itemIcon, itemId);
-                Debug.Log("R");
         
             }
 

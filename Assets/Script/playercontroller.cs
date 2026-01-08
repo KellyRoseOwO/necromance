@@ -3,14 +3,11 @@ using UnityEngine;
 
 public class Controller : MonoBehaviour
 {
-    // Rigidbody for physics (optional if you want physics-based movement)
     private Rigidbody m_Rigidbody;
 
-    // Movement speed and rotation speed
     public float m_Speed = 5f;
     public float m_RotateSpeed = 50.0f;
 
-    // Reference to the Animator component on your GLB model
     public Animator animator;
 
     public Dialogue dialogue;
@@ -58,7 +55,6 @@ public class Controller : MonoBehaviour
             transform.Rotate(Vector3.down * Time.deltaTime * m_RotateSpeed, Space.World);
         }
 
-        // Update Animator parameter
         if (animator != null)
         {
             animator.SetBool("IsWalking", isMoving);
