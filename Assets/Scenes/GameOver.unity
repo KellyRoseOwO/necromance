@@ -409,7 +409,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 1.4749756, y: -3.6099987}
+  m_AnchoredPosition: {x: 1.4749756, y: -3.6099854}
   m_SizeDelta: {x: 5.6099706, y: 2.7399998}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &286465601
@@ -623,7 +623,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -2.9149933, y: 4.3449993}
+  m_AnchoredPosition: {x: -2.914978, y: 4.3449993}
   m_SizeDelta: {x: -2.1699686, y: -2.6499991}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &711450518
@@ -779,10 +779,10 @@ RectTransform:
   - {fileID: 711450517}
   m_Father: {fileID: 1339180217}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -190}
-  m_SizeDelta: {x: 353.5, y: 61.8}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -225, y: 60}
+  m_SizeDelta: {x: 353.5, y: 61.799988}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &978387932
 MonoBehaviour:
@@ -796,7 +796,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc20040142bd243cfaecfaba3a00ba30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneSwitcher
-  sceneName: GamePlay
+  sceneName: StartMenu
 --- !u!114 &978387933
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1276,7 +1276,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -2.2050323, y: 1.0400047}
+  m_AnchoredPosition: {x: -2.205017, y: 1.0400085}
   m_SizeDelta: {x: 5.370024, y: 2.0799904}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1262549484
@@ -1329,6 +1329,7 @@ GameObject:
   - component: {fileID: 1339180216}
   - component: {fileID: 1339180215}
   - component: {fileID: 1339180214}
+  - component: {fileID: 1339180218}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1424,6 +1425,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1339180218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1339180213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bff862f4337e60c4e95fd3d3b61d1ae5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Ending
+  text: {fileID: 1792084233}
+  endingType: {fileID: 1731704796}
 --- !u!1 &1502304782
 GameObject:
   m_ObjectHideFlags: 0

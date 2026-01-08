@@ -58,7 +58,7 @@ public class Marjorie1_2: DialogueMaster
         },
         {
             "Marjorie",
-            "You can find the diver fish near the docks.\nThe town nut, Romeo, should have a pearl on his person.\nAnd you can easily get the Root extract by cutting off a tiny pice of the roots all around town."
+            "The diver fish should just be laying around somewhere in town. Root knows we have too many of those.\nThe town nut, Romeo, should have a pearl on his person.\nAnd you can easily get the Root extract by looking near any of the roots around town."
         },
         {
             "You",

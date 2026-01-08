@@ -87,6 +87,26 @@ public class Romeo1_1: DialogueMaster
         {
             "You",
             "Thank you."
+        },
+        {
+            "You",
+            "..."
+        },
+        {
+            "You",
+            "So, where is the pearl?"
+        },
+        {
+            "Romeo",
+            "Must I do everything for you blasphemer?"
+        },
+        {
+            "Romeo",
+            "Look around the barrels near the back of the church."
+        },
+        {
+            "Romeo",
+            "If no one took it, it should still be there."
         }
     };
 
