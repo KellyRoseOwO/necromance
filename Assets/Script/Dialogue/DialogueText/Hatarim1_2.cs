@@ -9,7 +9,7 @@ public class Hatarim1_2: DialogueMaster
             "V'ry well then."
         },
         {
-            "???",
+            "Hatarim?",
             "You may call me Hatarim."
         },
         {

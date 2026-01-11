@@ -38,11 +38,7 @@ public class Romeo1_1: DialogueMaster
         },
         {
             "Romeo",
-            "And this here."
-        },
-        {
-            "Romeo",
-            "Is my holy pearl."
+            "And you are in search of my holy rotted pearl."
         },
         {
             "You",

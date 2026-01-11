@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System;
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Dialogue : MonoBehaviour
 {
@@ -29,6 +30,15 @@ public class Dialogue : MonoBehaviour
     // lines[index, 0] --> name
     // lines[index, 1] --> dialogue
 
+    // Dialogue Images
+    public Sprite alchemist;
+    public Sprite carlosHealed;
+    public Sprite carlos;
+    public Sprite hatarim;
+    public Sprite romeo;
+    public GameObject pfpPanel;
+    public Image pfp;
+
     bool isInDialogue = false;
 
     public float textSpeed;
@@ -38,6 +48,19 @@ public class Dialogue : MonoBehaviour
     private DialogueMaster dialogue;
 
     private GameStateManager gameState = GameStateManager.gameState;
+
+    private int dialogueID;
+    /*
+    0 - Intro
+    1 - Marjorie1
+    2 - Isa1
+    3 - Romeo1
+    4 - Hatarim1
+    5 - Marjorie2
+    6 - Isa2
+    7 - FinaleGood
+    8 - FinaleBad
+    */
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -55,6 +78,8 @@ public class Dialogue : MonoBehaviour
         b1text = button1.GetComponentInChildren<TextMeshProUGUI>();
         b2text = button2.GetComponentInChildren<TextMeshProUGUI>();
         b3text = button3.GetComponentInChildren<TextMeshProUGUI>();
+
+        pfpPanel.gameObject.SetActive(false);
 
         // -------------------------------------
         // Temporary
@@ -90,9 +115,65 @@ public class Dialogue : MonoBehaviour
         StartCoroutine(TypeLine());
     }
 
-    IEnumerator TypeLine()
-    {
+    IEnumerator TypeLine() {
+    /*
+    0 - Intro
+    1 - Marjorie1
+    2 - Isa1
+    3 - Romeo1
+    4 - Hatarim1
+    5 - Marjorie2
+    6 - Isa2
+    7 - FinaleGood
+    8 - FinaleBad
+    */
+
         chatterName.text = lines[index, 0];
+        string name = chatterName.text;
+
+        switch(dialogueID) {
+            case 0:
+            case 7:
+            case 8:
+                if (name == "Carlos?") {
+                    pfpPanel.gameObject.SetActive(true);
+                    pfp.sprite = carlos;
+                } else if(name == "Carlos") {
+                    pfpPanel.gameObject.SetActive(true);
+                    pfp.sprite = carlosHealed;
+                } else {
+                    pfpPanel.gameObject.SetActive(false);
+                }
+                break;
+            case 1:
+            case 5:
+            case 2:
+            case 6:
+                if (name == "Alchemist" || name == "Marjorie" || name == "Isa") {
+                    pfpPanel.gameObject.SetActive(true);
+                    pfp.sprite = alchemist;
+                } else {
+                    pfpPanel.gameObject.SetActive(false);
+                }
+                break;
+            case 3:
+                if (name == "???" || name == "Romeo?" || name == "Romeo") {
+                    pfpPanel.gameObject.SetActive(true);
+                    pfp.sprite = romeo;
+                } else {
+                    pfpPanel.gameObject.SetActive(false);
+                }
+                break;
+            case 4:
+                if (name == "Hatarim?") {
+                    pfpPanel.gameObject.SetActive(true);
+                    pfp.sprite = hatarim;
+                } else {
+                    pfpPanel.gameObject.SetActive(false);
+                }
+                break;
+        }
+        
         foreach (char c in lines[index, 1].ToCharArray())
         {
             textComponent.text += c;
@@ -101,7 +182,7 @@ public class Dialogue : MonoBehaviour
     }
 
     void NextLine() {
-        index++;
+        index++; 
         if (index <= lines.GetLength(0) - 1) {
             //Debug.Log(index + " " + (lines.Length/2-1));
             textComponent.text = string.Empty;
@@ -275,6 +356,7 @@ public class Dialogue : MonoBehaviour
     }
 
     public void startDialogue(int ID) {
+        dialogueID = ID;
         switch (ID) {
             case 0:
                 dialogue = new Intro1_1();
@@ -306,6 +388,7 @@ public class Dialogue : MonoBehaviour
         }
 
         gameObject.SetActive(true);
+        pfpPanel.gameObject.SetActive(false);
         lines = dialogue.dialogue;
         textComponent.text = string.Empty;
         chatterName.text = string.Empty;
