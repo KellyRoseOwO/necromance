@@ -2051,7 +2051,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Ctrls\n\nEnter -> Interact with the environment, \nNPCs and progess NPC
-    dialogue. \n\n WASD -> Movement\n \nT -> Mute background music"
+    dialogue. \n\nMouse left click -> Progress dialogue.\n\n WASD -> Movement\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d9ea0bbc2712b4b5e813de25531169f0, type: 2}
   m_sharedMaterial: {fileID: -5829504827047437379, guid: d9ea0bbc2712b4b5e813de25531169f0, type: 2}
