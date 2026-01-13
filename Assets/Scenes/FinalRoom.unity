@@ -2629,6 +2629,7 @@ MonoBehaviour:
   carlos: {fileID: 21300000, guid: 23197f665fa9fc447a66e86a2246f6c1, type: 3}
   hatarim: {fileID: 21300000, guid: 21ff6b81f69340b42bf268e51c8559db, type: 3}
   romeo: {fileID: 21300000, guid: 95626df0c6468ae4c973a313738f1ded, type: 3}
+  alchemistGood: {fileID: 21300000, guid: 2948e6cb22268df48b3cf01b0bb0097c, type: 3}
   pfpPanel: {fileID: 128211766}
   pfp: {fileID: 730847486}
   textSpeed: 0.03

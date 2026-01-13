@@ -36,6 +36,7 @@ public class Dialogue : MonoBehaviour
     public Sprite carlos;
     public Sprite hatarim;
     public Sprite romeo;
+    public Sprite alchemistGood;
     public GameObject pfpPanel;
     public Image pfp;
 
@@ -147,11 +148,18 @@ public class Dialogue : MonoBehaviour
                 break;
             case 1:
             case 5:
-            case 2:
-            case 6:
-                if (name == "Alchemist" || name == "Marjorie" || name == "Isa") {
+                if (name == "Alchemist" || name == "Marjorie") {
                     pfpPanel.gameObject.SetActive(true);
                     pfp.sprite = alchemist;
+                } else {
+                    pfpPanel.gameObject.SetActive(false);
+                }
+                break;
+            case 2:
+            case 6:
+                if (name == "Isa") {
+                    pfpPanel.gameObject.SetActive(true);
+                    pfp.sprite = alchemistGood;
                 } else {
                     pfpPanel.gameObject.SetActive(false);
                 }
